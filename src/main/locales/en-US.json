@@ -1,0 +1,30 @@
+{
+	"undo": "Undo",
+	"edit": "Edit",
+	"redo": "Redo",
+	"copy": "Copy",
+	"cut": "Cut",
+	"paste": "Paste",
+	"pasteandmatchstyle": "PasteAndMatchStyle",
+	"delete": "Delete",
+	"selectall": "SelectAll",
+
+	"view": "View",
+	"reload": "Reload",
+	"forcereload": "ForceReload",
+	"toggledevtools": "ToggleDevTools",
+	"resetzoom": "ResetZoom",
+	"zoomin": "Zoomin",
+	"zoomout": "Zoomout",
+	"togglefullscreen": "ToggleFullScreen",
+
+	"window": "Window",
+	"close": "Close",
+	"minimize": "Minimize",
+	"zoom": "Zoom",
+
+	"help": "Help",
+
+	"about": "About",
+	"quit": "Quit"
+}

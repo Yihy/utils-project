@@ -1,0 +1,31 @@
+{
+	"edit": "编辑",
+	"undo": "撤销",
+	"redo": "重做",
+	"copy": "复制",
+	"cut": "剪切",
+	"paste": "粘贴",
+	"pasteandmatchstyle": "粘贴并匹配样式",
+	"delete": "删除",
+	"selectall": "全选",
+
+	"view": "视图",
+	"reload": "重载",
+	"forcereload": "强制重载",
+	"toggledevtools": "开发工具",
+	"resetzoom": "重置大小",
+	"zoomin": "放大",
+	"zoomout": "缩小",
+	"togglefullscreen": "全屏",
+
+	"window": "窗口",
+	"close": "关闭",
+	"minimize": "最小化",
+	"zoom": "最大化",
+
+	"help": "帮助",
+
+	"about": "关于",
+	"quit": "退出"
+
+}
