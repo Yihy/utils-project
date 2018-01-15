@@ -19,6 +19,11 @@ export default new Router({
       component: require('@/components/abc').default
     },
     {
+      path: '/idNumberInfo',
+      name: 'idNumberInfo',
+      component: require('@/components/idNumberInfo').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
