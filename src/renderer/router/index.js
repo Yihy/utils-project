@@ -14,9 +14,9 @@ export default new Router({
       component: require('@/components/LandingPage').default
     },
     {
-      path: '/abc',
-      name: 'abc',
-      component: require('@/components/abc').default
+      path: '/dateUtils',
+      name: 'dateUtils',
+      component: require('@/components/dateutils').default
     },
     {
       path: '/idNumberInfo',
