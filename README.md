@@ -1,4 +1,4 @@
-# my-project
+# utils-project
 
 > An electron-vue project
 

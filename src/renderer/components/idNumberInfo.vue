@@ -57,66 +57,61 @@
 </template>
 
 <script>
-var IDValidator = require('id-validator');
-var GB2260 = require('id-validator/src/GB2260');
 
-var Validator = new IDValidator(GB2260);
+var IDValidator = require('id-validator')
+var GB2260 = require('id-validator/src/GB2260')
+
+var Validator = new IDValidator(GB2260)
 export default {
 
-    data() {
-            return {
-                idNumber: "",
-                // province: "河北",
-                // city: "秦皇岛市",
-                // area: "北戴河区",
-                addr: "",
-                year: "",
-                month: "",
-                day: "",
-                sex: ""
-            }
-        },
-        methods: {
+  data () {
+    return {
+      idNumber: '',
+      // province: "河北",
+      // city: "秦皇岛市",
+      // area: "北戴河区",
+      addr: '',
+      year: '',
+      month: '',
+      day: '',
+      sex: ''
+    }
+  },
+  methods: {
+    make () {
+      // 制造一个18位ID
+      var ID = Validator.makeID()
 
-            make() {
+      this.idNumber = ID
+      this.jiexi()
+    },
+    jiexi () {
+      if (this.idNumber.length === 18) {
+        if (!Validator.isValid(this.idNumber)) {
+          this.$alert(this.idNumber, '身份证不合法!', {
+            confirmButtonText: '确定'
+          })
+          return
+        }
 
-                    //制造一个18位ID
-                    var ID = Validator.makeID();
+        // const validator = require('idnumbervalidator')
+        //
+        // // parseIDNumber
+        // let infos = validator.parseIDNumber(this.idNumber)
+        //
+        // if(infos){
+        //
+        //   this.province = infos.province
+        //   this.city = infos.city
+        //   this.area = infos.district
+        //   this.year = infos.year
+        //   this.month = infos.month
+        //   this.day = infos.day
+        //   this.sex = infos.sex % 2 ? '男' : '女'
+        // }
 
-                    this.idNumber = ID;
-                    this.jiexi();
-                },
-                jiexi() {
-
-                    if (this.idNumber.length == 18) {
-                        if (!Validator.isValid(this.idNumber)) {
-                            this.$alert(this.idNumber, '身份证不合法!', {
-                                confirmButtonText: '确定'
-                            });
-                            return
-                        }
-
-                        // const validator = require('idnumbervalidator')
-                        //
-                        // // parseIDNumber
-                        // let infos = validator.parseIDNumber(this.idNumber)
-                        //
-                        // if(infos){
-                        //
-                        //   this.province = infos.province
-                        //   this.city = infos.city
-                        //   this.area = infos.district
-                        //   this.year = infos.year
-                        //   this.month = infos.month
-                        //   this.day = infos.day
-                        //   this.sex = infos.sex % 2 ? '男' : '女'
-                        // }
-
-
-
-
-                        this.addr = Validator.getInfo(this.idNumber).addr;
-                        /*
+        this.addr = Validator.getInfo(this.idNumber).addr
+        /*
                          * 号码有效时返回内容示例:
                          * {
                          *   'addrCode': 100101, //地址码信息,
@@ -127,37 +122,18 @@ export default {
                          *   'length':   18 //身份证类型，15位或18位
                          * }
                          */
+        this.year = this.idNumber.substring(6, 10)
+        this.month = this.idNumber.substring(10, 12)
+        this.day = this.idNumber.substring(12, 14)
+        this.sex = parseInt(this.idNumber.substring(16, 17)) % 2 ? '男' : '女'
+      } else {
+        this.$alert(this.idNumber, '长度不合法!', {
+          confirmButtonText: '确定'
+        })
+      }
 
-                        // console.log(infos)
-                        /* {
-                          province: '江西省',
-                          city: '吉安市',
-                          district: '永丰县',
-                          year: 2009,
-                          month: 5,
-                          day: 6,
-                          seq: 195,
-                          sex: 1,
-                          crc: '9'
-                        } */
-
-                        this.year = this.idNumber.substring(6, 10)
-                        this.month = this.idNumber.substring(10, 12)
-                        this.day = this.idNumber.substring(12, 14)
-                        this.sex = parseInt(this.idNumber.substring(16, 17)) % 2 ? '男' : '女'
-
-
-                    } else {
-                        this.$alert(this.idNumber, '长度不合法!', {
-                            confirmButtonText: '确定'
-                        });
-                    }
-
-
-                    console.log(this.idNumber)
-
-                }
-        }
+      console.log(this.idNumber)
+    }
+  }
 }
-
 </script>
