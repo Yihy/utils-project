@@ -59,16 +59,16 @@
 <script>
 
 export default {
-    data() {
-        return {
-            "nowDate": ""
-        }
+  data () {
+    return {
+      'nowDate': ''
     }
+  }
 }
 
-var timerID = setInterval(updateTime, 1000);
-updateTime();
-function updateTime() {
-    this.nowDate = new Date();
-};
+// var timerID = setInterval(updateTime, 1000);
+// updateTime();
+// function updateTime() {
+//     this.nowDate = new Date();
+// };
 </script>
