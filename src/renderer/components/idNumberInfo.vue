@@ -3,7 +3,9 @@
 <template>
 
 <div>
-
+  <el-row :gutter="24">
+    <h2>身份证号解析</h2>
+  </el-row>
     <el-row :gutter="24">
         <el-col :span="4">
             <p>身份证号</p>
