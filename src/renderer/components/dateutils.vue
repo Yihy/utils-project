@@ -108,9 +108,6 @@ export default {
       this.pdate = a.Format('yyyy-MM-dd hh:mm:ss.S')
       console.log(a.Format('yyyy-MM-dd hh:mm:ss.S'))
       console.log('new: %s, old: %s', val, oldVal)
-    },
-    'value': function (val, oldVal) {
-      console.log('new: %s, old: %s', val, oldVal)
     }
 
   }
