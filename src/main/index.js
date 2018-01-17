@@ -17,7 +17,7 @@ let mainWindow
 i18n.configure({
   locales: ['en-US', 'zh-CN'], // setup some locales - other locales default to en_US silently
   defaultLocale: 'zh-CN',
-  directory: path.join(__dirname, '/locales'), // i18n 翻译文件目录，我的是 i18n， 可以写成其他的。
+  directory: path.join(__static, '/locales'), // i18n 翻译文件目录，我的是 i18n， 可以写成其他的。
   updateFiles: false,
   extension: '.json'
 })
