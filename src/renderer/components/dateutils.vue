@@ -25,7 +25,7 @@
             <p>日期</p>
         </el-col>
         <el-col :span="8">
-            <el-date-picker v-model="pdate" @change="cpdate" type="datetime" placeholder="选择日期" default-value="">
+            <el-date-picker v-model="pdate" type="datetime" placeholder="选择日期" default-value="">
             </el-date-picker>
         </el-col>
     </el-row>
@@ -71,6 +71,7 @@ var Format = function (fmt) { // author: meizz
   }
   return fmt
 }
+var flag = true
 export default {
   data () {
     return {
@@ -84,19 +85,15 @@ export default {
         label: '秒'
       }],
       'value': 'ms'
-    }
-  },
-  methods: {
-    cpdate () {
-      if (this.value === 'ms') {
-        this.unixTimestamp = new Date(this.pdate).getTime()
-      } else if (this.value === 's') {
-        this.unixTimestamp = new Date(this.pdate).getTime() / 1000
-      }
+
     }
   },
   watch: {
     'unixTimestamp': function (val, oldVal) {
+      if (!flag) {
+        flag = true
+        return
+      }
       var new2 = Number(val)
       if (this.value === 's') {
         new2 = new2 * 1000
@@ -106,8 +103,22 @@ export default {
       console.log(a)
       a.Format = Format
       this.pdate = a.Format('yyyy-MM-dd hh:mm:ss.S')
+      flag = false
       console.log(a.Format('yyyy-MM-dd hh:mm:ss.S'))
       console.log('new: %s, old: %s', val, oldVal)
+    },
+    'pdate': function (val, oldVal) {
+      if (!flag) {
+        flag = true
+        return
+      }
+
+      if (this.value === 'ms') {
+        this.unixTimestamp = new Date(this.pdate).getTime()
+      } else if (this.value === 's') {
+        this.unixTimestamp = new Date(this.pdate).getTime() / 1000
+      }
+      flag = false
     }
 
   }
