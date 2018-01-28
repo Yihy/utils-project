@@ -24,6 +24,11 @@ export default new Router({
       component: require('@/components/idNumberInfo').default
     },
     {
+      path: '/regex',
+      name: 'regex',
+      component: require('@/components/regex').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
