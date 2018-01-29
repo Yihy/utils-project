@@ -1,5 +1,12 @@
 # utils-project
 
+## 一个使用electron构建的跨平台工具箱,页面使用vue.js搭建
+已完成功能
+
+- 时间戳转换
+- 身份证校验 解析 随机生成
+- 正则表达式测试 
+
 > An electron-vue project
 
 #### Build Setup
