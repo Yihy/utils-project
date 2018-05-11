@@ -29,6 +29,11 @@ export default new Router({
       component: require('@/components/regex').default
     },
     {
+      path: '/cron',
+      name: 'cron',
+      component: require('@/components/cron').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
