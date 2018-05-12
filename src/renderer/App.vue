@@ -21,10 +21,12 @@
                         <el-menu-item index="2-4">
                             <router-link :to="{ name: 'regex'}">正则表达式测试工具</router-link>
                         </el-menu-item>
-                        <el-menu-item index="2-5">
-菜单                        </el-menu-item>
+                        <el-menu-item index="2-5">json格式化</el-menu-item>
+                        <el-menu-item index="2-6">日期计算器</el-menu-item>
+                        <el-menu-item index="2-7">加密解密</el-menu-item>
+                        <el-menu-item index="2-8">转码</el-menu-item>
                     </el-submenu>
-                    <el-menu-item index="3"><a href="https://www.yihy.cc" target="_blank">订单管理</a></el-menu-item>
+                    <el-menu-item index="3"><a href="http://a.icoding.pro:6003" target="_blank">Emby</a></el-menu-item>
                 </el-menu>
             </el-header>
             <el-main>

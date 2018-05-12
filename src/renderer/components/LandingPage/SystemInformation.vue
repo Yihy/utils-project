@@ -19,6 +19,10 @@
                 <div class="value">{{ electron }}</div>
             </div>
             <div class="item">
+                <div class="name">TotalMemory:</div>
+                <div class="value">{{ totalMemory }}</div>
+            </div>
+            <div class="item">
                 <div class="name">Node:</div>
                 <div class="value">{{ node }}</div>
             </div>
@@ -34,7 +38,8 @@
   export default {
     data () {
       return {
-        electron: process.versions['atom-shell'],
+        electron: require('electron/package.json').version,
+        totalMemory: process.getSystemMemoryInfo().total / 1024 / 1024 + 'GB',
         name: this.$route.name,
         node: process.versions.node,
         path: this.$route.path,
