@@ -9,7 +9,9 @@ import path from 'path'
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+  global.__static = require('path')
+    .join(__dirname, '/static')
+    .replace(/\\/g, '\\\\')
 }
 
 let mainWindow
@@ -22,9 +24,10 @@ i18n.configure({
   extension: '.json'
 })
 
-const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
-  : `file://${__dirname}/index.html`
+const winURL =
+  process.env.NODE_ENV === 'development'
+    ? `http://localhost:9080`
+    : `file://${__dirname}/index.html`
 
 function createMenu () {
   i18n.setLocale(app.getLocale())
@@ -126,11 +129,15 @@ function createMenu () {
       submenu: [
         {
           label: 'Learn More',
-          click () { require('electron').shell.openExternal('http://electron.atom.io') }
+          click () {
+            require('electron').shell.openExternal('http://electron.atom.io')
+          }
         },
         {
           label: '我的博客',
-          click () { require('electron').shell.openExternal('https://www.yihy.cc') }
+          click () {
+            require('electron').shell.openExternal('https://www.yihy.cc')
+          }
         }
       ]
     }

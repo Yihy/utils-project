@@ -3,7 +3,7 @@
 process.env.BABEL_ENV = 'main'
 
 const path = require('path')
-const { dependencies } = require('../package.json')
+const {dependencies} = require('../package.json')
 const webpack = require('webpack')
 
 const BabiliWebpackPlugin = require('babili-webpack-plugin')
@@ -11,7 +11,7 @@ const BabiliWebpackPlugin = require('babili-webpack-plugin')
 let mainConfig = {
   entry: {
     main: path.join(__dirname, '../src/main/index.js'),
-    vendor: ['i18n','vue'], 
+    vendor: ['i18n', 'vue'],
   },
   externals: [
     ...Object.keys(dependencies || {})

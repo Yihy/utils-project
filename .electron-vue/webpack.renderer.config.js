@@ -3,7 +3,7 @@
 process.env.BABEL_ENV = 'renderer'
 
 const path = require('path')
-const { dependencies } = require('../package.json')
+const {dependencies} = require('../package.json')
 const webpack = require('webpack')
 
 const BabiliWebpackPlugin = require('babili-webpack-plugin')
@@ -24,7 +24,7 @@ let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
     renderer: path.join(__dirname, '../src/renderer/main.js'),
-    vendor: ['vue', 'vuex','element-ui','vue-router','id-validator','axios','vue-electron'],
+    vendor: ['vue', 'vuex', 'element-ui', 'vue-router', 'id-validator', 'axios', 'vue-electron'],
   },
   externals: [
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
@@ -41,6 +41,16 @@ let rendererConfig = {
             formatter: require('eslint-friendly-formatter')
           }
         }
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader' // translates CSS into CommonJS
+        }, {
+          loader: 'less-loader' // compiles Less to CSS
+        }]
       },
       {
         test: /\.css$/,
