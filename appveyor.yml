@@ -25,7 +25,6 @@ install:
   - node --version
 
 build_script:
-  - yarn build
-  - yarn release
+  - yarn run release
 
 test: off
