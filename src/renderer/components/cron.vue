@@ -10,7 +10,6 @@
 </template>
 
 <script>
-  // import { cron } from '@/store/modules/cron/index.js'
   const {cron} = require('@/store/modules/cron/index.js')
 
   export default {
