@@ -3,7 +3,7 @@
   "productName": "程序员工具箱",
   "version": "0.0.2",
   "author": "yihy <yihy8023@gmail.com>",
-  "description": "An electron-vue project",
+  "description": "一个工具箱项目",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
@@ -18,11 +18,12 @@
     "pack": "yarn run pack:main && yarn run pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
-    "postinstall": "yarn run lint:fix"
+    "postinstall": "yarn run lint:fix",
+    "release": "build"
   },
   "build": {
     "productName": "utils-project",
-    "appId": "org.simulatedgreg.electron-vue",
+    "appId": "cc.yihy.app.utils",
     "directories": {
       "output": "build"
     },
